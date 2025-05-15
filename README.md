@@ -9,7 +9,7 @@ A simple Flask web app to verify faces and mark attendance using deep learning m
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/sharperi24/Smart_Attendance-DL-Project-.git
+git clone https://github.com/sharperi24/Smart_Attendance-DL-Project.git
 cd Smart_Attendance-DL-Project
 ```
 ### 2. Create a virtual environment 
