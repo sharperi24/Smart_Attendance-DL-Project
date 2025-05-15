@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Attendance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background:rgb(0, 17, 43);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px;
+    }
+
+    .container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      padding: 30px;
+      max-width: 800px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 28px;
+      color: #333;
+    }
+
+    video {
+      width: 100%;
+      max-width: 480px;
+      border-radius: 12px;
+      border: 4px solidrgb(0, 17, 43);
+      margin-top: 10px;
+    }
+
+    button {
+      margin-top: 20px;
+      background:rgb(0, 17, 43);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background:rgb(0, 17, 43);
+    }
+
+    #status {
+      margin-top: 15px;
+      font-weight: 600;
+      color: #555;
+      min-height: 20px;
+    }
+
+    .log {
+      margin-top: 40px;
+      text-align: left;
+    }
+
+    .log h2 {
+      font-size: 20px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+
+    .log ul {
+      list-style-type: none;
+      padding-left: 0;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .log li {
+      padding: 10px 15px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      font-size: 15px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Smart Attendance System</h1>
+    <video id="video" autoplay></video><br>
+    <button onclick="captureAndSend()">📸 Mark Attendance</button>
+    <p id="status"></p>
+
+    <div class="log">
+      <h2>📋 Attendance Log</h2>
+      <ul>
+        {% for entry in attendance %}
+          <li>{{ entry }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

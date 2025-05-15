@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+*.pyc
+*.pkl
+uploads/*
+!uploads/.gitkeep
+.DS_Store
+faces/
+attendance.txt
+
