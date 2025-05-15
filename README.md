@@ -1,26 +1,27 @@
 # Face Verification App (DLASSV1)
 
-This is a Flask-based Face Verification web application that allows a user to upload an image and verify their identity against pre-registered images using deep learning models like FaceNet and VGGFace.
-
+A simple Flask web app to verify faces using deep learning models (FaceNet or VGGFace).
 
 ## Features
+- Upload an image via browser
+- Compare it with stored face images
+- Supports FaceNet and VGGFace models
 
-- Upload image through a simple UI
-- Face detection and alignment using OpenCV
-- Identity verification using FaceNet / VGGFace embeddings
-- Dynamic image comparison with stored face representations
+## Setup Instructions
 
----
+### 1. Clone the repo
+```bash
+git clone https://github.com/yourusername/face-verification-app.git
+cd face-verification-app
 
-## Project Structure
-DLASSV1/
-├── static/ # JS and CSS files
-├── templates/ # HTML template (index.html)
-├── uploads/ # Uploaded images (excluded from Git)
-├── faces/ # Stored face images (excluded from Git)
-├── app.py # Main Flask app (or your Python script)
-├── requirements.txt # Python dependencies
-└── README.md # Project overview
+python -m venv venv
+# Activate the environment
+# Windows:
+venv\Scripts\activate
+# Mac/Linux:
+source venv/bin/activate
 
+pip install -r requirements.txt
 
+python app.py
 
